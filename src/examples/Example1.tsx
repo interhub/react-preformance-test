@@ -22,6 +22,7 @@ const Example1 = () => {
     <div>
       <IncreaseButton onClick={handleIncrease}/>
       <DisplayView count={count}/>
+      <SimpleChildViewTitle text={'Hi!'}/>
       <SimpleChildViewTitle/>
     </div>
     <div>
@@ -32,12 +33,12 @@ const Example1 = () => {
   </div>
 }
 
-const SimpleChildViewTitle=()=>{
+const SimpleChildViewTitle = ({text}: { text?: string }) => {
   useEffect(() => {
     console.log('SimpleChildViewTitle is updated' )
   })
   return <div>
-    SimpleChildViewTitle
+    SimpleChildViewTitle: {text || 'none'}
   </div>
 }
 
